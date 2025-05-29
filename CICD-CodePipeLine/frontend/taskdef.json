@@ -1,0 +1,23 @@
+{
+    "executionRoleArn": "arn:aws:iam::891376946144:role/final-assignment-task-execution-role",
+    "containerDefinitions": [
+        {
+            "name": "fe-container",
+            "image": "<IMAGE_NAME>",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 4200,
+                    "protocol": "tcp",
+                    "containerPort": 4200
+                }
+            ]
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "cpu": "512",
+    "memory": "1024"
+}

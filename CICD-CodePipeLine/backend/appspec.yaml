@@ -1,0 +1,14 @@
+
+version: 0.0
+# In the Resources section, you must specify the following: the Amazon ECS service, task definition name, 
+# and the name and port of the load balancer to route traffic,
+# target version, and (optional) the current version of your AWS Lambda function. 
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        # Specify the ARN of your task definition (arn:aws:ecs:region:account-id:task-definition/task-definition-family-name:task-definition-revision-number)
+        TaskDefinition: "arn:aws:ecs:ap-southeast-2:891376946144:task-definition/backend-task-definition:11" 
+        LoadBalancerInfo: 
+          ContainerName: "java-container" # Specify the name of your Amazon ECS application's container
+          ContainerPort: "8080" # Specify the port for your container where traffic reroutes 

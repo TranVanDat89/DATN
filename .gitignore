@@ -1,0 +1,20 @@
+# Terraform-related files
+*.tfstate
+*.tfstate.*
+.terraform/
+terraform.tfvars
+.terraform.lock.hcl
+
+# Backup files
+*.backup
+
+# Local environment files (optional)
+.env
+*.log
+
+# VS Code settings (optional)
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
