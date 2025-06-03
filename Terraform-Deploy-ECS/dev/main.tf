@@ -106,3 +106,9 @@ module "autoscaling" {
   cluster_name = module.ecs-cluster.cluster_name
   service_name = module.ecs-cluster.be_service_name
 }
+
+module "bastion" {
+  source = "../modules/bastion"
+  subnet_id = module.networking.private_subnet_ids[0]
+  security_groups = [module.security.bastion_security_group_id]
+}

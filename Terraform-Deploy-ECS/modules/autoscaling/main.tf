@@ -27,7 +27,7 @@ resource "aws_appautoscaling_policy" "cpu_scaling" {
     }
     
     target_value       = 70.0   # Target CPU 70%
-    scale_out_cooldown = 300    # 5 phút cooldown khi scale out
+    scale_out_cooldown = 120    # 5 phút cooldown khi scale out
     scale_in_cooldown  = 600    # 10 phút cooldown khi scale in
     disable_scale_in   = false  # Cho phép scale in
   }
@@ -49,7 +49,7 @@ resource "aws_appautoscaling_policy" "memory_scaling" {
     }
     
     target_value       = 80.0   # Target Memory 80%
-    scale_out_cooldown = 300    # 5 phút cooldown khi scale out
+    scale_out_cooldown = 120    # 5 phút cooldown khi scale out
     scale_in_cooldown  = 600    # 10 phút cooldown khi scale in
     disable_scale_in   = false  # Cho phép scale in
   }

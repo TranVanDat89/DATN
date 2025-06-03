@@ -44,7 +44,12 @@ resource "aws_iam_policy" "task_execution_policy" {
         "ecr:BatchGetImage",
         "logs:CreateLogStream",
         "logs:PutLogEvents",
-        "secretsmanager:GetSecretValue"
+        "secretsmanager:GetSecretValue",
+        "application-autoscaling:*",
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:PutMetricAlarm",
+        "cloudwatch:GetMetricStatistics",
+        "cloudwatch:ListMetrics"
       ],
       "Resource": "*"
     }
